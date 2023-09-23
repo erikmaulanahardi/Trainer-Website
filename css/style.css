@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+
+:root{
+    --primary: #58a727;
+    --bg: #000000;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+    min-height: 1000px;
+}
+
+img{   
+    z-index: -1;
+    position: fixed;
+    /* background-attachment: scroll; */
+}
+
+.bg-image img{
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; 
+}
+
+/* .gallery img{
+    z-index: 1;
+} */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgb(1,1,1,0.8);
+    border-bottom: 3px solid green;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar img{
+    float: left;
+    width: 11%;
+    height: 12%;
+}
+
+.navbar img:hover{
+    transform: scaleX(-1);
+}
+
+.navbar .navbar-logo{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00f7ff;
+    font-style: italic;
+    text-shadow: 5px 5px 5px black;
+}
+
+.navbar .navbar-logo span{
+    color: var(--primary);
+}
+
+/* .navbar .navbar-nav{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #ffae00;
+} */
+
+.navbar .navbar-nav{
+    border: 3px solid black;
+    box-shadow: 2px 2px 2px black;
+    padding: 3px;
+    border-radius: 40px;
+    background-color: brown;
+    margin: 0.2rem;
+}
+
+.navbar .navbar-nav a{
+    font-style: italic;
+    color: #f2ff00;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+    text-shadow: 2px 2px 2px black;
+}
+
+.navbar .navbar-nav a:hover{
+    opacity: 60%;
+}
+
+.navbar .navbar-icon a{
+    color: #02ff28;
+    padding: 10px;
+}
+
+.navbar .navbar-icon a:hover{
+    opacity: 60%;
+}
+
+.navbar .navbar-icon-2 a:hover{
+    opacity: 60%;
+}
+
+#menu {
+    display: inline-block;
+}
+
+/* Setting Resolusi Layar */
+/* Ukuran Laptop */
+@media (max-width: 1366px){
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Ukuran Tablet */
+@media (max-width: 768px){
+    html {
+        font-size: 62,5%;
+    }
+
+    #menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 50vh;
+        transition: 0,5s;
+    }
+}
+
+.navbar .navbar-nav.active{
+    right: 0;
+}
+
+/* Ukuran Handphone */
+@media (max-width: 450px){
+    html {
+        font-size: 55%;
+    }
+}
+
+.navbar .navbar-icon input[type=text]{
+    float: left;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    background-color: orange;
+    border: 2px solid black;
+    box-shadow: 2px 2px 2px rgb(20, 19, 19);
+    border-radius: 40px;
+}
+
+/* Search Bar Untuk Layar dibawah 600px */
+@media screen and (max-width: 600px){
+
+.navbar .navbar-icon, .navbar-icon input[type=text]{
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+}
+
+.navbar .navbar-icon input[type=text]{
+    border: 1px solid #ccc;
+}
+}
+
+/* Menu Dropdown (About Us) */
+.about-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.contact-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn{
+  color: white;
+  padding: 16px;
+  border: none;
+}
+
+.about-content{
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: green;
+  color: rgb(20, 19, 19);
+  padding: 5px;
+  min-width: 160px;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px;
+  border: 2px solid black;
+}
+
+.navbar .navbar-nav .about-dropdown a span{
+    color: #02ff28;
+}
+
+.navbar .navbar-nav .contact-dropdown a span{
+    color: #02c8ff;
+}
+
+.navbar .navbar-nav .menu-dropdown a span{
+    color: #fb02ff;
+}
+
+/* Menu */
+.contact-content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: green;
+    color: rgb(20, 19, 19);
+    padding: 5px;
+    min-width: 270px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px;
+    border: 2px solid black;
+}
+
+.menu-content{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: green;
+    color: rgb(20, 19, 19);
+    padding: 5px;
+    min-width: 160px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px;
+    border: 2px solid black;
+}
+
+.about-dropdown:hover .about-content{
+    display: block;
+}
+
+.contact-dropdown:hover .contact-content{
+    display: block;
+}
+
+.menu-dropdown:hover .menu-content{
+    display: block;
+}
+
+/* Section Banner */
+.banner{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    /* background-image: url("bg\ oren.jpg");  */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.banner .konten{
+    padding: 1.4rem 5%;
+    max-width: 45%;
+    z-index: 2;
+}
+
+.banner .konten h1{
+    font-size: 3rem;
+    color: #ffff00;
+    text-shadow: 2px 2px 2px rgb(20, 19, 19);
+    line-height: 1;
+}
+
+.banner .konten p{
+    margin-top: 2rem;
+    color: #ccff00;
+    line-height: 2rem;
+    font-weight: 50rem;
+    text-shadow: 2px 2px 2px rgb(20, 19, 19);
+    font-size: 1.1rem;
+}
+
+.banner .konten .menu{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: rgb(255, 13, 0);
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 1px rgb(20, 19, 19);
+    background-color: rgb(255, 160, 6);
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgb(20, 19, 19);
+    border: 2px solid black;
+}
+
+.banner .konten .menu:hover{
+    opacity: 60%;
+}
+
+.banner .konten p span{
+    color:#02ff3d
+}
+
+.banner .konten h1 span{
+    font-size: 3rem;
+    color: #02ff3d;
+    text-shadow: 2px 2px 2px rgb(20, 19, 19);
+    line-height: 1;
+}
+
+
+/* Belum dipakai */
+/* .banner::after{
+    content:"";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(rgba(217, 244, 13, 0)10%, rgba(234, 9, 9, 0)20%);
+} */
+
+/* Sidebar Menu (Tidak Terpakai) */
+/* .sidebaractive {
+    transform: translate(0%) !important;
+}
+.sidebar {
+    width: 300px;
+    background: #b912b4;
+    height: 100vh;
+    position: fixed;
+    padding: 20px;
+    box-sizing: border-box;
+    left: 0;
+    transform: translate(-100%);
+    transition: all 0.3s linear 0s;;
+}
+
+ul.nav-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 50px;
+}
+ul.nav-links li a {
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+ul.social-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top:40px
+}
+ul.social-links li {
+    display: inline-block;
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+    background: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 40px;
+}
+ul.social-links li a {
+    color: #b912b4;
+}
+.nav-header {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.closebtn {
+    position: absolute;
+    right: 15px;
+    font-size: 30px;
+    top: 0px;
+    color: #fff;
+    cursor: pointer;
+} */
